@@ -1,6 +1,8 @@
 using namespace std;
 #include <iostream>
 
+int DigitSum(int n);
+
 int main() {
 
   int tmp = 0;
@@ -13,7 +15,7 @@ int main() {
   }
 
   for (int x = 1; x <= input[0]; x++) {
-    tmp = (x / 10) + (x % 10);
+    tmp = DigitSum(x);
     if (tmp >= input[1] && tmp <= input[2]) {
       result += x;
     }
@@ -21,4 +23,12 @@ int main() {
 
   cout << result << endl;
 
+}
+
+int DigitSum(int n) {
+  if (n < 10) {
+    return n;
+  } else {
+    return DigitSum(n / 10) + (n % 10);
+  }
 }

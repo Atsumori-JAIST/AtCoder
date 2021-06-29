@@ -14,19 +14,13 @@ int main() {
   }
 
   for (int j = 0; j <= input[0]; j++) {
-    for (int k = 0; k <= input[0]-j; k++) {
-      for (int l = 0; l <= input[0]-j-k; l++) {
-        sum = (10000 * j) + (5000 * k) + (1000 * l);
-        if (sum > input[1]) {
-          break;
-        } else {
-          if (sum == input[1]) {
-            resBill[0] = j;
-            resBill[1] = k;
-            resBill[2] = l;
-            goto OUT;
-          }
-        }
+    for (int k = 0; k <= input[0]; k++) {
+      sum = (10000 * j) + (5000 * k) + (1000 * (input[0]-j-k));
+      if (sum == input[1]) {
+        resBill[0] = j;
+        resBill[1] = k;
+        resBill[2] = input[0]-j-k;
+        goto OUT;
       }
     }
   }

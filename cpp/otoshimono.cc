@@ -17,11 +17,11 @@ int main() {
     for (int k = 0; k <= input[0]; k++) {
       int l = input[0] - j - k;
       if (j>=0 && k>=0 && l>=0) {
-        sum = (10000 * j) + (5000 * k) + (1000 * (input[0]-j-k));
+        sum = (10000 * j) + (5000 * k) + (1000 * l);
         if (sum == input[1]) {
           resBill[0] = j;
           resBill[1] = k;
-          resBill[2] = input[0]-j-k;
+          resBill[2] = l;
           goto OUT;
         }
       }

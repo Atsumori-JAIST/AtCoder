@@ -15,12 +15,15 @@ int main() {
 
   for (int j = 0; j <= input[0]; j++) {
     for (int k = 0; k <= input[0]; k++) {
-      sum = (10000 * j) + (5000 * k) + (1000 * (input[0]-j-k));
-      if (sum == input[1]) {
-        resBill[0] = j;
-        resBill[1] = k;
-        resBill[2] = input[0]-j-k;
-        goto OUT;
+      int l = input[0] - j - k;
+      if (j>=0 && k>=0 && l>=0) {
+        sum = (10000 * j) + (5000 * k) + (1000 * (input[0]-j-k));
+        if (sum == input[1]) {
+          resBill[0] = j;
+          resBill[1] = k;
+          resBill[2] = input[0]-j-k;
+          goto OUT;
+        }
       }
     }
   }

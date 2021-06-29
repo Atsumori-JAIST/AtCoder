@@ -17,16 +17,21 @@ int main() {
     for (int k = 0; k <= input[0]-j; k++) {
       for (int l = 0; l <= input[0]-j-k; l++) {
         sum = (10000 * j) + (5000 * k) + (1000 * l);
-        if (input[1] == sum) {
-          resBill[0] = j;
-          resBill[1] = k;
-          resBill[2] = l;
+        if (sum > input[1]) {
           break;
+        } else {
+          if (sum == input[1]) {
+            resBill[0] = j;
+            resBill[1] = k;
+            resBill[2] = l;
+            goto OUT;
+          }
         }
       }
     }
   }
 
+OUT:
   if (iniBill == resBill) {
     cout << -1 << " " << -1 << " " << -1 << endl;
   } else {

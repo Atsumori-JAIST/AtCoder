@@ -30,7 +30,7 @@ int main() {
           goto OUT;
         }
       case 6:
-        if (input.substr(0.6) == "eraser") {
+        if (input.substr(0,6) == "eraser") {
           cout << "YES" << endl;
           goto OUT;
         }
